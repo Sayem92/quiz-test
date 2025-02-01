@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../logo/mobile-in-hand.png";
 
-const Navbar = () => {
+
+
+ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   let activeStyle = {
@@ -16,18 +17,18 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
-            aria-label="Company"
+            aria-label="/"
             className="inline-flex items-center"
           >
-            <img src={logo} className="w-10" alt="" />
+            {/* <img src={logo} className="w-10" alt="" /> */}
             <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
               Quiz Test
             </span>
           </Link>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <ul className="flex items-center  space-x-8 lg:flex">
             <li>
               <NavLink
-                to="/home"
+                // to="/home"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 aria-label="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -79,7 +80,7 @@ const Navbar = () => {
                         aria-label="Company"
                         className="inline-flex items-center"
                       >
-                        <img src={logo} className="w-10" alt="" />
+                        {/* <img src={logo} className="w-10" alt="" /> */}
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           Quiz Test
                         </span>
