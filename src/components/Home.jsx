@@ -4,13 +4,16 @@ import toast from "react-hot-toast";
 
 const Home = () => {
   const [allData, setData] = useState();
+  const [loading, setLoading]=useState(false)
 
   //loading Data
   useEffect(() => {
+    setLoading(true);
     fetch("/api/Uw5CrX#")
       .then((res) => res.json())
       .then((data) => {
         setData(data?.questions);
+        setLoading(false);
       });
   }, []);
 
@@ -77,6 +80,10 @@ const Home = () => {
     setSubmitted(true);
     toast.success(`�� Quiz submitted successfully! }`);
   };
+
+  if (loading) {
+    return <div className="text-4xl font-bold text-blue-600 m-4 md:m-20">Loading...</div>;
+  }
 
   return (
     <div className="mb-10 mx-6">
