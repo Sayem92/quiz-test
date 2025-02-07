@@ -6,9 +6,9 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
-      <div>
-       <RouterProvider router={routes}></RouterProvider>
-       <Toaster />
+      <div className="max-w-[1240px] mx-auto">
+        <RouterProvider router={routes}></RouterProvider>
+        <Toaster />
       </div>
     </>
   );

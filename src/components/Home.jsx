@@ -86,7 +86,7 @@ const Home = () => {
   }
 
   return (
-    <div className="mb-10 mx-6">
+    <div className="mb-10 md:mx-6">
       {allData?.map(( question) => (
         <Question
           key={question?.id}
