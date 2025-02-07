@@ -28,7 +28,7 @@ import { Link, NavLink } from "react-router-dom";
           <ul className="flex items-center  space-x-8 lg:flex">
             <li>
               <NavLink
-                // to="/home"
+                to="/home"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 aria-label="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -38,12 +38,12 @@ import { Link, NavLink } from "react-router-dom";
             </li>
             <li>
               <NavLink
-                to="/topics"
+                to="/topic"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 aria-label="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Topics
+                Topic
               </NavLink>
             </li>
           </ul>
@@ -118,14 +118,14 @@ import { Link, NavLink } from "react-router-dom";
                       </li>
                       <li>
                         <NavLink
-                          to="/topics"
+                          to="/topic"
                           style={({ isActive }) =>
                             isActive ? activeStyle : undefined
                           }
                           aria-label="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Topics
+                          Topic
                         </NavLink>
                       </li>
                     </ul>
