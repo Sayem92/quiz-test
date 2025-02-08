@@ -1,10 +1,10 @@
 {
-  "name": "quiz-assignment",
+  "name": "quiz-test-assignment",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run dev",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
