@@ -2,7 +2,7 @@
 💡💡 Quiz Test
 
 ## Live Site Client
-[]
+[https://quiz-test-assignment.netlify.app/]
 
 ## Code Link Client
 [https://github.com/Sayem92/quiz-test]

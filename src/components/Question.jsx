@@ -1,8 +1,8 @@
 const Question = ({ q, selectedOptions, handleOptionChange, submitted }) => {
   const { description, options } = q;
-  
+
   return (
-    <div className="p-6 shadow-md border border-white m-4 rounded-lg ">
+    <div className="p-6 shadow-md border border-white  m-2 md:my-4 rounded-lg ">
       <h2 className="text-lg font-semibold mb-4">{description}</h2>
       <div className="flex flex-col gap-2">
         {options?.map((option) => (

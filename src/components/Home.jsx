@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Question from "./Question";
 import toast from "react-hot-toast";
+import Answers from "./Answers";
 
 const Home = () => {
   const [allData, setData] = useState();
-  const [loading, setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
 
   //loading Data
   useEffect(() => {
@@ -44,7 +45,7 @@ const Home = () => {
     );
 
     if (!allAnswered) {
-      toast.error("🚨 Please complete all questions before submitting!")
+      toast.error("🚨 Please complete all questions before submitting!");
       return;
     }
 
@@ -82,15 +83,19 @@ const Home = () => {
   };
 
   if (loading) {
-    return <div className="text-4xl font-bold text-blue-600 m-4 md:m-20">Loading...</div>;
+    return (
+      <div className="text-4xl font-bold text-blue-600 m-4 md:m-20">
+        Loading...
+      </div>
+    );
   }
 
   return (
     <div className="mb-10 md:mx-6">
-      {allData?.map(( question) => (
+      {allData?.map((question) => (
         <Question
           key={question?.id}
-          q={(question)}
+          q={question}
           selectedOptions={selectedAnswers[question?.id] || []}
           handleOptionChange={handleOptionChange}
           submitted={submitted}
@@ -100,14 +105,14 @@ const Home = () => {
       {!submitted && (
         <button
           onClick={handleSubmit}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="my-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
           Submit Quiz
         </button>
       )}
 
       {score !== null && (
-        <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+        <div className="mt-4 m-2 lg:my-8 p-4 lg:py-8 bg-gray-100 rounded-lg">
           <h1 className="text-4xl font-extrabold text-blue-700 mb-2">
             Final Result
           </h1>
@@ -117,6 +122,13 @@ const Home = () => {
           <p className="text-red-600">❌ Incorrect: {score.incorrect}</p>
         </div>
       )}
+
+      {submitted &&
+        allData
+          ?.filter((question) =>
+            question.options.some((option) => option.is_correct)
+          )
+          .map((question) => <Answers key={question?.id} q={question} />)}
     </div>
   );
 };
