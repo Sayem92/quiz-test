@@ -10,7 +10,7 @@ const Home = () => {
   //loading Data
   useEffect(() => {
     setLoading(true);
-    fetch("/api/Uw5CrX#")
+    fetch("/api/Uw5CrX")
       .then((res) => res.json())
       .then((data) => {
         setData(data?.questions);
