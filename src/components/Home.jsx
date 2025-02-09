@@ -6,11 +6,16 @@ import Answers from "./Answers";
 const Home = () => {
   const [allData, setData] = useState();
   const [loading, setLoading] = useState(false);
-
+  const API_URL =
+  import.meta.env.MODE === "development"
+    ? "/api/Uw5CrX" // Local Proxy
+    : "https://api.jsonserve.com/Uw5CrX"; // Netlify
+    
   //loading Data
   useEffect(() => {
     setLoading(true);
-    fetch("/api/Uw5CrX")
+    // const API_URL = "https://api.jsonserve.com/Uw5CrX"; 
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         setData(data?.questions);
